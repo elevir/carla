@@ -1,0 +1,4 @@
+set(SOURCE_FILES ${SOURCE_FILES}
+	${CMAKE_CURRENT_LIST_DIR}/Navigation.cpp
+	${CMAKE_CURRENT_LIST_DIR}/WalkerEvent.cpp
+	${CMAKE_CURRENT_LIST_DIR}/WalkerManager.cpp)

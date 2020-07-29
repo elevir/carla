@@ -1,0 +1,4 @@
+set(SOURCE_FILES ${SOURCE_FILES}
+    ${CMAKE_CURRENT_LIST_DIR}/Client.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/Server.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/ServerSession.cpp)

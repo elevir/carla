@@ -1,0 +1,4 @@
+set(SOURCE_FILES ${SOURCE_FILES}
+    ${CMAKE_CURRENT_LIST_DIR}/RssCheck.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/RssRestrictor.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/RssSensor.cpp)
