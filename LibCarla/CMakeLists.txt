@@ -7,8 +7,12 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMake ${CMAKE_MODULE_PATH})
 set(LIBCARLA_THIRD_PARTY_DIR ${CMAKE_CURRENT_BINARY_DIR}/third_party CACHE PATH "path to third party installation directory")
 message(STATUS "Third party installation directory: ${LIBCARLA_THIRD_PARTY_DIR}")
 
-option(LIBCARLA_BUILD_TEST "Build unit tests" ON)
+option(LIBCARLA_BUILD_TEST "Build unit tests" OFF)
 message(STATUS "Build test:   ${LIBCARLA_BUILD_TEST}")
 
 add_subdirectory(third-party)
 add_subdirectory(libcarla)
+
+if(LIBCARLA_BUILD_TEST)
+#	add_subdirectory(test)
+endif()

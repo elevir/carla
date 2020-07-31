@@ -53,13 +53,13 @@ set ZLIB_TEMP_FILE_DIR=%BUILD_DIR%%ZLIB_TEMP_FILE%
 set ZLIB_REPO=http://www.zlib.net/zlib%ZLIB_VERSION:.=%.zip
 
 set ZLIB_SRC_DIR=%BUILD_DIR%%ZLIB_BASENAME%-source
-set ZLIB_INSTALL_DIR=%BUILD_DIR%%ZLIB_BASENAME%-install
+set ZLIB_INSTALL_DIR=%BUILD_DIR%install
 
 rem ============================================================================
 rem -- Get zlib ---------------------------------------------------------------
 rem ============================================================================
 
-if exist "%ZLIB_INSTALL_DIR%" (
+if exist "%ZLIB_SRC_DIR\build%" (
     goto already_build
 )
 

@@ -36,12 +36,12 @@ set RECAST_HASH=cdce4e
 set RECAST_COMMIT=cdce4e1a270fdf1f3942d4485954cc5e136df1df
 set RECAST_SRC=recast-%RECAST_HASH%-src
 set RECAST_SRC_DIR=%BUILD_DIR%%RECAST_SRC%\
-set RECAST_INSTALL=recast-%RECAST_HASH%-install
+set RECAST_INSTALL=install
 set RECAST_INSTALL_DIR=%BUILD_DIR%%RECAST_INSTALL%\
 set RECAST_BUILD_DIR=%RECAST_SRC_DIR%build
 set RECAST_BASENAME=%RECAST_SRC%
 
-if exist "%RECAST_INSTALL_DIR%" (
+if exist "%RECAST_BUILD_DIR%" (
     goto already_build
 )
 
@@ -65,7 +65,7 @@ if not exist "%RECAST_BUILD_DIR%" (
 cd "%RECAST_BUILD_DIR%"
 echo %FILE_N% Generating build...
 
-cmake .. -G "Visual Studio 15 2017 Win64"^
+cmake .. -G "Ninja"^
     -DCMAKE_BUILD_TYPE=Release^
     -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP"^
     -DCMAKE_INSTALL_PREFIX=%RECAST_INSTALL_DIR%^

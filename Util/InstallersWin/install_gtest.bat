@@ -36,11 +36,11 @@ if not "%1"=="" (
 set GT_VERSION=release-1.8.1
 set GT_SRC=gtest-src
 set GT_SRC_DIR=%BUILD_DIR%%GT_SRC%\
-set GT_INSTALL=gtest-install
+set GT_INSTALL=install
 set GT_INSTALL_DIR=%BUILD_DIR%%GT_INSTALL%\
 set GT_BUILD_DIR=%GT_SRC_DIR%build
 
-if exist "%GT_INSTALL_DIR%" (
+if exist "%GT_BUILD_DIR%" (
     goto already_build
 )
 
@@ -61,7 +61,7 @@ if not exist "%GT_BUILD_DIR%" (
 cd "%GT_BUILD_DIR%"
 echo %FILE_N% Generating build...
 
-cmake .. -G "Visual Studio 15 2017 Win64"^
+cmake .. -G "Ninja"^
     -DCMAKE_BUILD_TYPE=Release^
     -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP"^
     -DCMAKE_INSTALL_PREFIX=%GT_INSTALL_DIR%^

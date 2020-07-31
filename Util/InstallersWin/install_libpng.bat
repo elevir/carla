@@ -62,13 +62,13 @@ set LIBPNG_REPO=http://downloads.sourceforge.net/gnuwin32/libpng-%LIBPNG_VERSION
 rem ../libpng-x.x.x-source/
 set LIBPNG_SRC_DIR=%BUILD_DIR%%LIBPNG_BASENAME%-%LIBPNG_VERSION%-source
 rem ../libpng-x.x.x-install/
-set LIBPNG_INSTALL_DIR=%BUILD_DIR%%LIBPNG_BASENAME%-%LIBPNG_VERSION%-install
+set LIBPNG_INSTALL_DIR=%BUILD_DIR%install
 
 rem ============================================================================
 rem -- Get libpng --------------------------------------------------------------
 rem ============================================================================
 
-if exist "%LIBPNG_INSTALL_DIR%" (
+if exist "%LIBPNG_SRC_DIR%\build" (
     goto already_build
 )
 

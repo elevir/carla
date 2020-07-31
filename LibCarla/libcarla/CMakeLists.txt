@@ -6,7 +6,7 @@ include(GNUInstallDirs)
 option(BUILD_CLIENT_RSS_VARIANT "Enables ad-rss-lib based RSS components" OFF)
 option(BUILD_RSS_VARIANT "Enables ad-rss-lib based RSS components" OFF)
 
-message(STATUS "RSS components enabled: ${BUILD_RSS_VARIANT}")
+message(STATUS "RSS components: ${BUILD_RSS_VARIANT}")
 if (BUILD_RSS_VARIANT)
 	set(CMAKE_DEBUG_POSTFIX "_rss${CMAKE_DEBUG_POSTFIX}")
 	set(CMAKE_RELEASE_POSTFIX "_rss${CMAKE_RELEASE_POSTFIX}")

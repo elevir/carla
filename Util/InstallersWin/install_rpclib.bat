@@ -36,13 +36,13 @@ if not "%1"=="" (
 set RPC_VERSION=v2.2.1_c2
 set RPC_SRC=rpclib-src
 set RPC_SRC_DIR=%BUILD_DIR%%RPC_SRC%\
-set RPC_INSTALL=rpclib-install
+set RPC_INSTALL=install
 set RPC_INSTALL_DIR=%BUILD_DIR%%RPC_INSTALL%\
 set RPC_BUILD_DIR=%RPC_SRC_DIR%build
 
 set PUSHD_RPC=%RPC_SRC_DIR:\=/%
 
-if exist "%RPC_INSTALL_DIR%" (
+if exist "%RPC_BUILD_DIR%" (
     goto already_build
 )
 
@@ -63,7 +63,7 @@ if not exist "%RPC_BUILD_DIR%" (
 cd "%RPC_BUILD_DIR%"
 echo %FILE_N% Generating build...
 
-cmake .. -G "Visual Studio 15 2017 Win64"^
+cmake .. -G "Ninja"^
         -DCMAKE_BUILD_TYPE=Release^
         -DRPCLIB_BUILD_EXAMPLES=OFF^
         -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP"^
